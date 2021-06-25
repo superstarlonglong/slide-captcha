@@ -26,11 +26,14 @@
 
 		#wrap{
 			display: none;
+			height : 300px;
+			border-radius: 20px;
 			margin: 0 auto;
 			width: 340px;
-			height: 290px;
 			padding-top: 10px;
 			background-color: powderblue;
+			position: relative;
+			transition: all 2s linear 0s;
 		}
 
 		#img_wrap{
@@ -45,28 +48,29 @@
 			height: 200px;
 		}
 
+		
+
 		.img_wrap_slide_items div{
 			position: absolute;
 			left: 0;
 			top: 0;
 			width: 50px;
 			height: 50px;
-			background-color: white;
 			border-radius: 10px;
 		}
 
 		#cutBlock{
-		display: none;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5) inset;
+			display: none;
+			position: absolute;
+			width: 50px;
+			height: 50px;
+			border-radius: 10px;
+			background-color: rgba(0, 0, 0, 0.2);
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5) inset;
 		}
 
 		#slide_wrap{
-			
+			margin-left: 20px;
 			width: 300px;
 			height: 40px;
 			margin-top: 5px;
@@ -83,12 +87,16 @@
 		}
 
 		.slide-text{
-    text-align: left !important;
-    color: #4b3f33;
+			text-align: left !important;
+			color: #4b3f33;
 		}
 
 		.greenColor{
-    color: green;
+    		color: green;
+		}
+
+		.redColor{
+			color: red;
 		}
 
 		.slide_wrap_items{
@@ -101,9 +109,15 @@
 			text-align: center;
 			border-radius: 30px;
 			position: absolute;
-    	background-position: -140% 84%;
+    		background-position: -140% 84%;
 			background-size: 115.7894736842% 1571.875%;
 			z-index: 999;
+		}
+
+		.refresh_btn{
+			position: absolute;
+			right: 20px;
+			bottom: 0;
 		}
 	</style>
 </head>
@@ -119,40 +133,40 @@
 		<div id="wrap">
 			<div id="img_wrap">
 				<div id="cutBlock"></div>
-				<div class="img_wrap_slide_bg"><img src="" id="img_wrap_slide_bg"></div>
+				<div class="img_wrap_slide_bg"><img src="" id="img_wrap_slide_bg">
 				<div class="img_wrap_slide_items" ><div id="img_wrap_slide_btn"></div></div></div>
+				
+			</div>
 			
 			<div id="slide_wrap">
 				<div class="slide_track"></div>
-				<div class='slide-text'><span class='slide-text-type' id='slideType'></span>
-				<span class='slide-text-content' id='slideContent'></span></div>
-				<div class="slide_wrap_items" id="slide-btn">
+				<div class='slide-text'>
+				<span class='slide-text-type'  id='slideType'></span>
+				<span class='slide-text-content' id='slideContent'></span>
 				</div>
+				<div class="slide_wrap_items" id="slide-btn"></div>
 			</div>
+			<div class="refresh_btn" id="refreshBtn">刷新</div>
 		</div>
-		<div id="refreshBtn">刷新</div>
 
     <script>
 			var start_x,start_y,move_x,move_y,diff_x,diff_y,init_x,init_y = 0
-			var isDown = true
+			var isDown,isSuccess = true
 			var start_slide,end_slide = 0
-			var imgList = ["img-bg-1.png","img-bg-2.png","img-bg-3.png","img-bg-4.png","img-bg-5.png"]
+			var imgList = ["img-bg-0.png","img-bg-1.png","img-bg-2.png","img-bg-3.png","img-bg-4.png","img-bg-5.png"]
 			var sub = document.getElementById("btn")
 			var slide_btn = document.getElementById("slide-btn")
 			var cutBlock = document.getElementById("cutBlock")
-			var img_wrap_slide_items = document.getElementById("img_wrap_slide_btn")
+			var img_wrap_slide_btn = document.getElementById("img_wrap_slide_btn")
 			var img_wrap_slide_bg = document.getElementById("img_wrap_slide_bg")
 			var refreshBtn = document.getElementById("refreshBtn")
+			var Wrap = document.getElementById("wrap")
+			var slideContent = document.getElementById("slideContent")
 			sub.onclick = function(){
 				initCaptcha()
 				initCaptchaUI()
 			}
 			slide_btn.onmousedown = function(e){
-				var event = e
-				slideItemsDown(event)
-			}
-
-			img_wrap_slide_items.onmousedown = function(e){
 				var event = e
 				slideItemsDown(event)
 			}
