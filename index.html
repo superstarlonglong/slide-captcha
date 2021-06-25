@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BIND滑块</title>
+	<style>
+			#form{
+				width: 280px;
+				margin: 0 auto;
+		}
+
+			.input{
+				font-size: 16px;
+				width: 260px;
+				margin: 10px;
+				line-height: 30px;
+			}
+
+			button{
+				width: 25%;
+				height: 30px;
+				margin-left: 30%;
+		}
+
+		#wrap{
+			display: none;
+			margin: 0 auto;
+			width: 340px;
+			height: 290px;
+			padding-top: 10px;
+			background-color: powderblue;
+		}
+
+		#img_wrap{
+			position: relative;
+			width: 300px;
+			height: 200px;
+			margin-left: 20px;
+		}
+
+		.img_wrap_slide_bg img{
+			width: 300px;
+			height: 200px;
+		}
+
+		.img_wrap_slide_items div{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 50px;
+			height: 50px;
+			background-color: white;
+			border-radius: 10px;
+		}
+
+		#cutBlock{
+		display: none;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5) inset;
+		}
+
+		#slide_wrap{
+			
+			width: 300px;
+			height: 40px;
+			margin-top: 5px;
+			position: relative;
+		}
+
+		.slide_track{
+			width: 300px;
+			height: 35px;
+			background-color: #dee3eb;
+			position: absolute;
+			top: 25px;
+			border-radius: 15px;
+		}
+
+		.slide-text{
+    text-align: left !important;
+    color: #4b3f33;
+		}
+
+		.greenColor{
+    color: green;
+		}
+
+		.slide_wrap_items{
+			background-image: url("assert/img_wrap/sprite.png");
+			background-repeat: no-repeat;
+			width: 80px;
+			height: 50px;
+			top: 20px;
+			background-color: #5682fd;
+			text-align: center;
+			border-radius: 30px;
+			position: absolute;
+    	background-position: -140% 84%;
+			background-size: 115.7894736842% 1571.875%;
+			z-index: 999;
+		}
+	</style>
+</head>
+<body>
+<script src="./slide_tools.js"></script>
+<script src="./slide_ui.js"></script>
+
+    <form id="form">
+			<input type="text" class="input">
+			<input type="text"  class="input">
+			<button id="btn" type="button">提交</button>
+    </form>
+		<div id="wrap">
+			<div id="img_wrap">
+				<div id="cutBlock"></div>
+				<div class="img_wrap_slide_bg"><img src="" id="img_wrap_slide_bg"></div>
+				<div class="img_wrap_slide_items" ><div id="img_wrap_slide_btn"></div></div></div>
+			
+			<div id="slide_wrap">
+				<div class="slide_track"></div>
+				<div class='slide-text'><span class='slide-text-type' id='slideType'></span>
+				<span class='slide-text-content' id='slideContent'></span></div>
+				<div class="slide_wrap_items" id="slide-btn">
+				</div>
+			</div>
+		</div>
+		<div id="refreshBtn">刷新</div>
+
+    <script>
+			var start_x,start_y,move_x,move_y,diff_x,diff_y,init_x,init_y = 0
+			var isDown = true
+			var start_slide,end_slide = 0
+			var imgList = ["img-bg-1.png","img-bg-2.png","img-bg-3.png","img-bg-4.png","img-bg-5.png"]
+			var sub = document.getElementById("btn")
+			var slide_btn = document.getElementById("slide-btn")
+			var cutBlock = document.getElementById("cutBlock")
+			var img_wrap_slide_items = document.getElementById("img_wrap_slide_btn")
+			var img_wrap_slide_bg = document.getElementById("img_wrap_slide_bg")
+			var refreshBtn = document.getElementById("refreshBtn")
+			sub.onclick = function(){
+				initCaptcha()
+				initCaptchaUI()
+			}
+			slide_btn.onmousedown = function(e){
+				var event = e
+				slideItemsDown(event)
+			}
+
+			img_wrap_slide_items.onmousedown = function(e){
+				var event = e
+				slideItemsDown(event)
+			}
+
+			refreshBtn.onclick = function(){
+				refreshBtnClick()
+			}
+			
+    </script>
+</body>
+</html>
