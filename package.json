@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "lint": "eslint --fix --ext .js,.jsx,.vue src",
-    "precommit": "lint-staged"
+    "lint": "eslint --fix --ext .js src"
+    
   },
   "husky": {
     "hooks": {
