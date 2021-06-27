@@ -1,6 +1,6 @@
 function initCaptchaUI() {
   const Wrap = document.getElementById('wrap');
-  Wrap.style.display = 'block';
+   Wrap.style.display = 'block';
 }
 
 function changeCssStyle(obj, attr, value) {
