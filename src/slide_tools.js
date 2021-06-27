@@ -1,5 +1,5 @@
 function initCaptcha() {
-  refreshImg();
+    refreshImg();
 }
 
 function refreshBtnClick() { // 重置参数和图片
