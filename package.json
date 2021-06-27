@@ -9,17 +9,15 @@
     "lint": "eslint --fix --ext .js src"
   },
   "husky": {
-    　　"hooks": {
-        　　"pre-commit": "lint-staged",
-        　　"pre-push": "lint-staged"
-    　　}
-    },
-    "lint-staged": {
-    　　"src/**/*.{js,json,vue}": [
-        　　"eslint --fix",
-        　　"git add"
-    　　]
-    },
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "lint"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/superstarlonglong/slide-captcha.git"
