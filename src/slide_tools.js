@@ -10,7 +10,7 @@ function refreshBtnClick() { // 重置参数和图片
   refreshImg();
 }
    
-var a = 1
+var a = 2
 
 
 function slideItemsDown(event) {
