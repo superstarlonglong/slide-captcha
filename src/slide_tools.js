@@ -1,5 +1,5 @@
 function initCaptcha() {
-     refreshImg();
+ refreshImg();
 }
 
 function refreshBtnClick() { // 重置参数和图片
@@ -9,6 +9,9 @@ function refreshBtnClick() { // 重置参数和图片
   move_x = 0;
   refreshImg();
 }
+   
+var a = 1
+
 
 function slideItemsDown(event) {
   if (isSuccess) {
