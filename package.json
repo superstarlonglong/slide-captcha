@@ -18,7 +18,7 @@
     　　"src/**/*.{js,json,vue}": [
         　　"eslint --fix",
         　　"git add"
-    　　]
+    　　 ]
     },
   
   "repository": {
