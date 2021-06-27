@@ -28,8 +28,5 @@ module.exports = {
         　　fix: true,
         }
 	],
-	devServer:{
-		contentBase:'./dist',//服务器目录
-		open:true//自动打开浏览器
-}
+
 	}

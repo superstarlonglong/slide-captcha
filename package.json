@@ -18,9 +18,8 @@
     　　"src/**/*.{js,json,vue}": [
         　　"eslint --fix",
         　　"git add"
-    　　 ]
+    　　]
     },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/superstarlonglong/slide-captcha.git"
