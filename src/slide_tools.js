@@ -7,7 +7,7 @@ function refreshBtnClick() { // 重置参数和图片
   img_wrap_slide_btn.style.cssText = '';
   cutBlock.style.cssText = '';
   move_x = 0;
-  refreshImg();
+    refreshImg();
 }
 
 function slideItemsDown(event) {
