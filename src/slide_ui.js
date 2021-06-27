@@ -4,6 +4,6 @@ function initCaptchaUI() {
 }
 
 function changeCssStyle(obj, attr, value) {
-   obj.style[attr] = value;
-   console.log(obj.style[attr]);
+  obj.style[attr] = value;
+  console.log(obj.style[attr]);
 }

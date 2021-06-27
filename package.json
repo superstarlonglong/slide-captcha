@@ -3,26 +3,24 @@
   "version": "1.0.0",
   "description": "slide demo",
   "main": "slide_tools.js",
-
-  "husky": {
-    　　"hooks": {
-        　　"pre-commit": "lint-staged",
-        　　"pre-push": "lint-staged"
-    　　}
-    },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "lint": "eslint --fix --ext .js src",
-    "precommit": "npm run lint"
+    "lint": "eslint --fix --ext .js,.jsx,.vue src"
+  },
+  "husky": {
+    "hooks":{
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
+    }
+  },
+  "lint-staged":{
+    "src/*.{js,json}":[
+      "eslint --fix",
+      "git add"
+    ]
   },
   
-    "lint-staged": {
-    　　"src/*.{js}": [
-        　　"eslint --fix",
-        　　"git add"
-    　　]
-    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/superstarlonglong/slide-captcha.git"
