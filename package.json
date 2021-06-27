@@ -3,18 +3,20 @@
   "version": "1.0.0",
   "description": "slide demo",
   "main": "slide_tools.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "lint": "eslint --fix --ext .js src",
-    "precommit": "npm run lint"
-  },
+
   "husky": {
     　　"hooks": {
         　　"pre-commit": "lint-staged",
         　　"pre-push": "lint-staged"
     　　}
     },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "lint": "eslint --fix --ext .js src",
+    "precommit": "npm run lint"
+  },
+  
     "lint-staged": {
     　　"src/**/*.{js}": [
         　　"eslint --fix",
