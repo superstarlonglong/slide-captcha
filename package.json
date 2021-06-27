@@ -8,16 +8,13 @@
     "build": "webpack",
     "lint": "eslint --fix --ext .js src"
   },
+  
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run lint"
     }
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx}": [
-      "lint"
-    ]
-  },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/superstarlonglong/slide-captcha.git"
