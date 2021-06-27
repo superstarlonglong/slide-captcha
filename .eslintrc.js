@@ -18,6 +18,15 @@ module.exports = {
     "plugins": [
     ],
     "rules": {
-        'no-console': 'off'
+        'no-console': 'off',
+        'camelcase': 'off',
+        'no-unused-vars': 'off',
+        'no-use-before-define':'off',
+        'func-names':'off',
+        'no-undef': 'off',
+        'no-multi-assign':'off',
+        'no-shadow':'off',
+        'no-param-reassign':'off',
+        'no-useless-concat':'off'
     }
 };

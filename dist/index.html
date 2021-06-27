@@ -92,7 +92,7 @@
 		}
 
 		.slide_wrap_items{
-			background-image: url("assert/img_wrap/sprite.png");
+			background-image: url("../assert/img_wrap/sprite.png");
 			background-repeat: no-repeat;
 			width: 80px;
 			height: 50px;
@@ -110,7 +110,7 @@
 			position: absolute;
 			right: 20px;
 			bottom: 0;
-		}</style><script defer="defer" src="bundle1.js"></script><script defer="defer" src="bundle2.js"></script></head><body><script src="./slide_tools.js"></script><script src="./slide_ui.js"></script><form id="form"><input class="input"> <input class="input"> <button id="btn" type="button">提交</button></form><div id="wrap"><div id="img_wrap"><div id="cutBlock"></div><div class="img_wrap_slide_bg"><img src="" id="img_wrap_slide_bg"><div class="img_wrap_slide_items"><div id="img_wrap_slide_btn"></div></div></div></div><div id="slide_wrap"><div class="slide_track"></div><div class="slide-text"><span class="slide-text-type" id="slideType"></span> <span class="slide-text-content" id="slideContent"></span></div><div class="slide_wrap_items" id="slide-btn"></div></div><div class="refresh_btn" id="refreshBtn">刷新</div></div><script>var start_x,start_y,move_x,move_y,diff_x,diff_y,init_x,init_y = 0
+		}</style><script defer="defer" src="main.js"></script></head><body><script src="./src/slide.js"></script><form id="form"><input class="input"> <input class="input"> <button id="btn" type="button">提交</button></form><div id="wrap"><div id="img_wrap"><div id="cutBlock"></div><div class="img_wrap_slide_bg"><img src="" id="img_wrap_slide_bg"><div class="img_wrap_slide_items"><div id="img_wrap_slide_btn"></div></div></div></div><div id="slide_wrap"><div class="slide_track"></div><div class="slide-text"><span class="slide-text-type" id="slideType"></span> <span class="slide-text-content" id="slideContent"></span></div><div class="slide_wrap_items" id="slide-btn"></div></div><div class="refresh_btn" id="refreshBtn">刷新</div></div><script>var start_x,start_y,move_x,move_y,diff_x,diff_y,init_x,init_y = 0
 			var isDown,isSuccess = true
 			var start_slide,end_slide = 0
 			var imgList = ["img-bg-0.png","img-bg-1.png","img-bg-2.png","img-bg-3.png","img-bg-4.png","img-bg-5.png"]
@@ -133,4 +133,7 @@
 
 			refreshBtn.onclick = function(){
 				refreshBtnClick()
-			}</script></body></html>
+			}
+			function initCaptcha() {
+  refreshImg();
+}</script></body></html>
