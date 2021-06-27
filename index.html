@@ -122,8 +122,7 @@
 	</style>
 </head>
 <body>
-<script src="./slide_tools.js"></script>
-<script src="./slide_ui.js"></script>
+<script src="./src/slide.js"></script>
 
     <form id="form">
 			<input type="text" class="input">
@@ -149,8 +148,8 @@
 			<div class="refresh_btn" id="refreshBtn">刷新</div>
 		</div>
 
-    <script>
-			var start_x,start_y,move_x,move_y,diff_x,diff_y,init_x,init_y = 0
+<script>
+				var start_x,start_y,move_x,move_y,diff_x,diff_y,init_x,init_y = 0
 			var isDown,isSuccess = true
 			var start_slide,end_slide = 0
 			var imgList = ["img-bg-0.png","img-bg-1.png","img-bg-2.png","img-bg-3.png","img-bg-4.png","img-bg-5.png"]
@@ -174,7 +173,10 @@
 			refreshBtn.onclick = function(){
 				refreshBtnClick()
 			}
-			
-    </script>
+			function initCaptcha() {
+  refreshImg();
+}
+</script>
+	
 </body>
 </html>

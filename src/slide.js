@@ -1,5 +1,29 @@
+let start_x; let start_y; let move_x; let move_y; let diff_x; let diff_y; let init_x; let init_y = 0;
+let isDown; let isSuccess = true;
+let start_slide; let end_slide = 0;
+const imgList = ['img-bg-0.png', 'img-bg-1.png', 'img-bg-2.png', 'img-bg-3.png', 'img-bg-4.png', 'img-bg-5.png'];
+const sub = document.getElementById('btn');
+const slide_btn = document.getElementById('slide-btn');
+const cutBlock = document.getElementById('cutBlock');
+const img_wrap_slide_btn = document.getElementById('img_wrap_slide_btn');
+const img_wrap_slide_bg = document.getElementById('img_wrap_slide_bg');
+const refreshBtn = document.getElementById('refreshBtn');
+const Wrap = document.getElementById('wrap');
+const slideContent = document.getElementById('slideContent');
+sub.onclick = function () {
+  initCaptcha();
+  initCaptchaUI();
+};
+slide_btn.onmousedown = function (e) {
+  const event = e;
+  slideItemsDown(event);
+};
+
+refreshBtn.onclick = function () {
+  refreshBtnClick();
+};
 function initCaptcha() {
- refreshImg();
+  refreshImg();
 }
 
 function refreshBtnClick() { // 重置参数和图片
@@ -9,8 +33,6 @@ function refreshBtnClick() { // 重置参数和图片
   move_x = 0;
   refreshImg();
 }
-   
-
 
 function slideItemsDown(event) {
   if (isSuccess) {
@@ -108,4 +130,13 @@ function refreshImg() {
   const imgSrc = `./assert/img_wrap/${imgList[index]}`;
   img_wrap_slide_bg.setAttribute('src', imgSrc);
   img_wrap_slide_btn.style.backgroundImage = `url(${imgSrc})`;
+}
+function initCaptchaUI() {
+  const Wrap = document.getElementById('wrap');
+  Wrap.style.display = 'block';
+}
+
+function changeCssStyle(obj, attr, value) {
+  obj.style[attr] = value;
+  console.log(obj.style[attr]);
 }

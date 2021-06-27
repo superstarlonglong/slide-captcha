@@ -3,11 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-		entry:{
-			bundle1: './src/slide_tools.js',   //  第一个JS文件
-
-			bundle2: './src/slide_ui.js',    //  第二个JS文件
-		},
+		entry:"./src/slide.js",
 		output:{
 				filename:'[name].js',//根据入口名，生成不同的文件，这里示例的入口名是main被省略了，所以生成的是main.js而不是index.js
 				path:path.resolve(__dirname,'dist')
@@ -18,6 +14,7 @@ module.exports = {
 			}),
 			new CleanWebpackPlugin(),
 	],
+	module:{
 	rules:[
 		{
 			test: /\.(js)$/,
@@ -27,6 +24,8 @@ module.exports = {
         options: {
         　　fix: true,
         }
-	],
+	}
+	]
+}
 
 	}
